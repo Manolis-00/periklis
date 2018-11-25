@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<div class="ui placeholder segment">
+    <div class="ui two column very relaxed stackable grid">
+        <div class="column">
+            <div class="ui form">
+                <div class="field">
+                    <label>Όνομα Χρήστη</label>
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="Όνομα Χρήστη">
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Κωδικός</label>
+                    <div class="ui left icon input">
+                        <input type="password">
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                <a href="/"><div class="ui blue submit button">Login</div></a>
+            </div>
+        </div>
+        <div class="middle aligned column">
+            <div class="ui big button">
+                <a href="/signup"><i class="signup icon"></i></a>
+                Sign Up
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical divider">
+        Or
+    </div>
+</div>
+
+<% include ./partials/footer %>
