@@ -7,7 +7,7 @@ var express = require("express"),
 
 //APP CONFIGURATION
 mongoose.connect("mongodb://localhost/periklis", { useNewUrlParser: true });
-app.use(bodyParser.urlencoded{{extended: true}});
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(express.static("public"));
 app.set("view engine", "ejs");
