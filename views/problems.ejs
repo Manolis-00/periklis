@@ -6,18 +6,21 @@
         <div class="ui divided items">
             <% counties.forEach(function(county) { %>
                 <div class="item">
+                    <div class="image">
+                        <img src="<%= county.image %>">
+                    </div>
                     <div class="content">
-                        <a class="header" href="">θελει συνεχεια</a>
+                        <a class="header" href="/problems/<%= county._id %>"><%= county.title %>></a>
                         <div class="meta">
-                            <span><%= blog.created.toDateString() %></span>
+                            <span><%= county.created.toDateString() %></span>
                         </div>
                         <div class="description">
                             <p><%- county.body.substring(0, 100) %> ...</p>
                         </div>
                         <div class="extra">
-                            <a class="ui floated basic violet buttton" href="">
-                                Περισσότερα (Συνεχιση)
-                            <i class="right chevron"></i>
+                            <a class="ui floated basic violet buttton" href="/problems/<%= county._id %>">
+                                Περισσότερα
+                                <i class="right chevron"></i>
                             </a>
                         </div>
                     </div>
