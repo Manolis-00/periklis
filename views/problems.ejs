@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Ζητήματα Δημοτών</div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% counties.forEach(function(county) { %>
+                <div class="item">
+                    <div class="content">
+                        <a class="header" href="">θελει συνεχεια</a>
+                        <div class="meta">
+                            <span><%= blog.created.toDateString() %></span>
+                        </div>
+                        <div class="description">
+                            <p><%- county.body.substring(0, 100) %> ...</p>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic violet buttton" href="">
+                                Περισσότερα (Συνεχιση)
+                            <i class="right chevron"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+           <% }) %>
+        </div>
+    </div>
+    <a href="/problems/new"><button class="ui inverted blue button">Υποβολή Νέου Ζητήματος</button></a>
+</div>
+
+<% include ./partials/footer %>

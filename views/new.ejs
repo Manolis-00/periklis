@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Νέο Ζήτημα</div>
+    <form class="ui form" action="/problems" method="POST">
+        <div class="required field">
+            <label>Τίτλος</label>
+            <input type="text" name="county[title]" placeholder="Τίτλος">
+        </div>
+        <div class="field">
+            <label>Εικόνα</label>
+            <input type="text" name="county[image]" placeholder="Εικόνα">
+        </div>
+        <div class="required field">
+            <label>Δήμος</label>
+            <input type="text" name="county[demos]" placeholder="Δήμος">
+        </div>
+        <div class="required field">
+            <label>Περιεχόμενο</label>
+            <textarea name="county[body]"></textarea>
+        </div>
+        <input class="ui green big inverted button" type="submit">
+    </form>
+</div>
+
+<% include ./partials/footer %>
