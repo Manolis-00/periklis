@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Επεξεργασία <%= county.title %></div>
+    <form class="ui form" action="/problems/<%= county._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Τίτλος</label>
+            <input type="text" name="county[title]" value="<%= county.title %>">
+        </div>
+        <div class="field">
+            <label>Εικόνα</label>
+            <input type="text" name="county[image]" value="<%= county.image %>">
+        </div>
+        <div class="field">
+            <label>Δήμος</label>
+            <input type="text" name="county[demos]" value="<%= county.demos %>">
+        </div>
+        <div class="field">
+            <label>Περιεχόμενο</label>
+            <textarea name="county[body]"><%= county.body %></textarea>
+        </div>
+        <input class="ui green big inverted button" type="submit">
+    </form>
+</div>
+
+<% include ./partials/footer %>

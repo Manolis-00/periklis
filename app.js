@@ -82,6 +82,41 @@ app.get("/problems/:id", function(req, res) {
     });
 });
 
+// EDIT ROUTE
+app.get("/problems/:id/edit", function(req, res) {
+    County.findById(req.params.id, function(err, foundProblem) {
+        if(err) {
+            res.redirect("/problems");
+        } else {
+            res.render("edit", {county: foundProblem});
+        }
+    });
+});
+
+// UPDATE ROUTE
+app.put("/problems/:id", function(req, res) {
+    req.body.county.body = req.sanitize(req.body.county.body)
+    County.findByIdAndUpdate(req.params.id, req.body.county, function(err, updatedProblem){
+        if(err) {
+            res.redirect("/problems");
+        } else {
+            res.redirect("/problems/" + req.params.id);
+        }
+    });
+});
+
+//DELETE ROUTE
+app.delete("/problems/:id", function(req, res){
+    //destroy problem
+    County.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect("/problems");
+        } else {
+            res.redirect("/problems");
+        }
+    });
+});
+
 
 app.listen(3000, function(){
     console.log("Server has started!!!")
