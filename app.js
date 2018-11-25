@@ -71,6 +71,17 @@ app.post("/problems", function(req, res){
     });
 });
 
+// SHOW ROUTE
+app.get("/problems/:id", function(req, res) {
+    County.findById(req.params.id, function(err, foundProblem) {
+        if(err) {
+            res.redirect("/problems");
+        } else {
+            res.render("show", {county: foundProblem});
+        }
+    });
+});
+
 
 app.listen(3000, function(){
     console.log("Server has started!!!")
