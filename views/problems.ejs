@@ -16,7 +16,7 @@
                             <span><%= county.created.toDateString() %></span>
                         </div>
                         <div class="description">
-                            <p><%- county.body.substring(0, 100) %> ...</p>
+                            <p><%= county.body.substring(0, 100) %> ...</p>
                         </div>
                         <div class="extra">
                             <a class="ui floated basic violet buttton" href="/problems/<%= county._id %>">
